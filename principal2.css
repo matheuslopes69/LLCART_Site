@@ -1,0 +1,125 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+*html, body {
+      height: 100%;
+      font-family: 'Georgia', serif;
+    }
+body {
+      background-image: url("imagens/BACKGROUNDTOTAL.jpg"); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      position: relative;
+    }
+.inicioindex h1 {
+    font-family: 'Georgia', serif;
+    font-size: 36px;
+      color: #f48e4f;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    }
+.inicioindex p {
+   font-family: 'Georgia', serif;
+    font-size: 14px;
+       color: #f48e4f;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    }
+header{
+      display: flex;
+      justify-content: right;
+      align-items: right;
+      gap: 20px;
+      padding: 12px 20px;
+      font-family: 'Georgia', serif;
+    }
+.simbolochurras {
+      width: 45px;
+      height: auto;
+    }
+    .Introdução h1 {
+    font-family: 'Georgia', serif;
+    font-size: 50px;
+      color: #f48e4f;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    }
+        .Introdução p {
+    font-family: 'Georgia', serif;
+    font-size: 30px;
+      color: #ffffff;
+   font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    }
+footer {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #ffffff;
+    font-size: 14px;
+      bottom: 0;
+      left: 0;   
+      width: 100%; 
+       position: fixed;
+}    
+.princi2 {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .princi2 h1{
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+        }
+
+        .princi2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .opcao {
+            width: 250px;
+            text-align: center;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .opcao img {
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+        }
+
+        .opcao img:hover {
+            transform: scale(1.12);
+            z-index: 2;
+        }
+
+        .opcao h3 {
+            margin-top: 15px;
+            font-size: 1.2em;
+            color: #ffffff;
+        }
+
+        .opcao p {
+            font-size: 0.95em;
+            color: #f48e4f;
+        }
+        .opcao img {
+        transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+        }
+    .opcao img:hover {
+        transform: scale(1.12);
+        z-index: 2;
+        }
