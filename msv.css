@@ -1,4 +1,3 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +14,6 @@ html, body {
   background-attachment: fixed;
 }
 
-/* NAVBAR */
 .navbar {
   width: 100%;
   background-color: rgb(50, 26, 15);
@@ -64,7 +62,6 @@ html, body {
   transform: scale(1.1);
 }
 
-/* CONTEÚDO PRINCIPAL */
 .info-secao {
   padding: 80px 20px 100px 20px;
   color: #ffffff;
@@ -113,7 +110,6 @@ html, body {
   line-height: 1.6;
 }
 
-/* FOOTER */
 footer {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
@@ -127,7 +123,6 @@ footer {
   left: 0;
 }
 
-/* RESPONSIVO */
 @media (max-width: 768px) {
   .info-conteudo {
     flex-direction: column;
