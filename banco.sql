@@ -18,4 +18,4 @@ CREATE TABLE usuarios (
 INSERT INTO usuarios (nome, email, senha)
 VALUES ('Administrador', 'admin@llacart.com', '$2y$10$ExemploSenhaHash');
 
--- OBS: Troque esse hash por uma senha real posteriormente!
+

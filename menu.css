@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +15,7 @@ html, body {
   background-attachment: fixed;
 }
 
+/* NAVBAR */
 .navbar {
   width: 100%;
   background-color: rgb(50, 26, 15);
@@ -63,6 +65,7 @@ html, body {
 }
 
 
+/* SEÇÃO DO CARDÁPIO */
 .cardapio-secao {
   text-align: center;
   padding: 60px 20px 100px 20px;
@@ -81,39 +84,54 @@ html, body {
 }
 
 
-.cardapio-tabela {
+/* --- CARD NOVO --- */
+.card-item {
   width: 90%;
-  margin: 0 auto;
-  border-collapse: collapse;
-  background-color: rgba(0,0,0,0.6);
-  border-radius: 10px;
-  overflow: hidden;
+  margin: 20px auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.5);
 }
 
-.cardapio-tabela th, .cardapio-tabela td {
-  padding: 15px 20px;
-  text-align: left;
-  font-size: 1.1em;
-  color: #ffffff;
+.card-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #f48e4f;
 }
 
-.cardapio-tabela th {
-  background-color: #5c2c0c;
+.card-info {
+  flex: 1;
+}
+
+.card-titulo {
   color: #f48e4f;
-  text-transform: uppercase;
+  font-size: 1.6em;
+  margin-bottom: 8px;
   letter-spacing: 1px;
 }
 
-.cardapio-tabela tr:nth-child(even) {
-  background-color: rgba(255,255,255,0.05);
+.card-descricao {
+  color: #fff;
+  font-size: 1.1em;
+  line-height: 1.4em;
 }
 
-.cardapio-tabela tr:hover {
-  background-color: rgba(255,255,255,0.1);
+.card-preco {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #f48e4f;
+  min-width: 90px;
+  text-align: right;
 }
 
 
+/* FOOTER */
 footer {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
@@ -127,16 +145,15 @@ footer {
   left: 0;
 }
 
-
+/* RESPONSIVO */
 @media (max-width: 768px) {
-  .cardapio-tabela th, .cardapio-tabela td {
-    padding: 10px;
-    font-size: 1em;
+  .card-item {
+    flex-direction: column;
+    text-align: center;
   }
-}
 
-@media (max-width: 480px) {
-  .cardapio-tabela {
-    width: 100%;
+  .card-preco {
+    text-align: center;
+    margin-top: 10px;
   }
 }
