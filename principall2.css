@@ -95,8 +95,8 @@ body {
 }
 
 .opcao img {
-  width: 260px;     /* antes era 400px */
-  height: 260px;    /* antes era 400px */
+  width: 260px;     
+  height: 260px;    
   object-fit: cover;
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
