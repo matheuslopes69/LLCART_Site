@@ -3,14 +3,18 @@ include "database.php";
 
 if (!isset($_POST['nome'], $_POST['login'], $_POST['senha'])) {
     header("Location: register.php");
-    die();
+    exit();
 }
 
 $nome  = $_POST['nome'];
 $login = $_POST['login'];
-$senha = $_POST['senha'];
+$senha = password_hash($_POST['senha'], PASSWORD_DEFAULT); // senha segura
 
-$stmt = $conn->prepare("INSERT INTO usuario(nome_user, login_user, senha_user) VALUES (:nome, :login, :senha)");
+$stmt = $conn->prepare("
+    INSERT INTO usuarios (nome, login, senha_hash)
+    VALUES (:nome, :login, :senha)
+");
+
 $stmt->bindParam(':nome', $nome);
 $stmt->bindParam(':login', $login);
 $stmt->bindParam(':senha', $senha);

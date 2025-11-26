@@ -3,28 +3,43 @@ include "database.php";
 session_start();
 
 if (!isset($_POST['login'], $_POST['senha'])) {
-    header('Location: login.php');
-    die();
+    header("Location: login.php");
+    exit();
 }
 
 $login = $_POST['login'];
 $senha = $_POST['senha'];
 
-$consulta = $conn->prepare("SELECT id_user, nome_user FROM usuario WHERE login_user = :login AND senha_user = :senha");
-$consulta->bindParam(':login', $login);
-$consulta->bindParam(':senha', $senha);
-$consulta->execute();
+$stmt = $conn->prepare("
+    SELECT id, nome, senha_hash, permissao, ativo 
+    FROM usuarios 
+    WHERE login = :login
+");
+$stmt->bindParam(':login', $login);
+$stmt->execute();
 
-if ($consulta->rowCount() != 1) {
-    echo "Login ou senha incorretos!";
-    die();
+if ($stmt->rowCount() !== 1) {
+    echo "Login incorreto!";
+    exit();
 }
 
-$data = $consulta->fetch(PDO::FETCH_OBJ);
+$user = $stmt->fetch(PDO::FETCH_OBJ);
+
+
+if ($user->ativo == 0) {
+    die("Usuário desativado!");
+}
+
+
+if (!password_verify($senha, $user->senha_hash)) {
+    die("Senha incorreta!");
+}
 
 $_SESSION['usuario'] = [
-    'id' => $data->id_user,
-    'nome' => $data->nome_user
+    'id' => $user->id,
+    'nome' => $user->nome,
+    'permissao' => $user->permissao
 ];
 
 header("Location: ../principal2.html");
+exit();

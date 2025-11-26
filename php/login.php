@@ -1,8 +1,8 @@
 <?php
 session_start();
 if (isset($_SESSION['usuario'])) {
-    header('Location: ../principal2.html');
-    die();
+    header("Location: ../principal2.html");
+    exit();
 }
 ?>
 <!DOCTYPE html>

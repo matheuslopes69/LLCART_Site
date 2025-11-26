@@ -3,12 +3,12 @@ $host = "localhost";
 $port = "3306";
 $user = "root";
 $senha = "";
-$banco = "llacart_db";
+$banco = "restaurante";
 
 try {
-    $conn = new PDO("mysql:host=$host;port=$port;dbname=$banco", $user, $senha);
+    $conn = new PDO("mysql:host=$host;port=$port;dbname=$banco;charset=utf8", $user, $senha);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
-    echo "ERRO: " . $e->getMessage();
+    die("ERRO: " . $e->getMessage());
 }
 ?>
